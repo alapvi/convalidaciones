@@ -9,5 +9,5 @@ class conva_model(models.Model):
     _sql_constraints = [('convalidaciones_alum_mod_unique','UNIQUE (modulo_id,alumno_id)','Alumno ya tiene la convalidación!'),]
 
     fecha=fields.Date(string="Fecha",required=True,help="Fecha obligatoria para convalidar",default=datetime.today())
-    modulo_id=fields.Many2one("convalidaciones.modulo_model","modulo")
-    alumno_id=fields.Many2one("convalidaciones.alumno_model","alumno")
+    modulo_id=fields.Many2one("convalidaciones.modulo_model",string="Módulo")
+    alumno_id=fields.Many2one("convalidaciones.alumno_model",string="Alumno")
