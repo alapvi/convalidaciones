@@ -29,6 +29,7 @@
         'views/modulo_view.xml',
         'views/conva_view.xml',
         'views/ciclo_view.xml',
+        'views/profesor_view.xml',
         'views/menu_view.xml'
         
     ],

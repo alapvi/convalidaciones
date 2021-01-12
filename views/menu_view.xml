@@ -5,6 +5,7 @@
     <menuitem name="Modulos" id="convalidaciones.menu_modulo" parent="convalidaciones.menu_root" action="convalidaciones.action_window_modulo"/>
     <menuitem name="Convalidaciones" id="convalidaciones.menu_conva" parent="convalidaciones.menu_root" action="convalidaciones.action_window_conva"/>
     <menuitem name="Ciclos" id="convalidaciones.menu_ciclo" parent="convalidaciones.menu_root" action="convalidaciones.action_window_ciclo"/>
+    <menuitem name="Profesores" id="convalidaciones.menu_profesores" parent="convalidaciones.menu_root" action="convalidaciones.action_window_profesor"/>
 
   </data>
 </odoo>

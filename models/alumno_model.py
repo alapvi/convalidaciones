@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import random
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+
 
 class alumno_model(models.Model):
     _name='convalidaciones.alumno_model'
@@ -14,8 +16,8 @@ class alumno_model(models.Model):
     localidad=fields.Char(string="Localidad",size=100,required=True,help="Localidad del alumno")
     provincia=fields.Char(string="Provincia",size=100,required=True,help="Provincia del alumno")
     email=fields.Char(string="Email",size=100,required=False,help="Email del alumno")
-
-
+    convalidaciones=fields.One2many("convalidaciones.conva_model","alumno_id",string="Convalidaciones")
+    profesores = fields.Many2many("convalidaciones.profesor_model",string="Profesores")
     def generarPassword(self):
         self.password=""
         self.ensure_one()
@@ -24,3 +26,9 @@ class alumno_model(models.Model):
     
         return True    
             
+    @api.constrains("edad")
+    def _check_edad(self):
+        if self.edad < 16:
+            raise ValidationError("La edad debe ser mayor de 16 años!")
+ 
+
